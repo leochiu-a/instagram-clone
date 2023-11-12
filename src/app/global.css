@@ -1,0 +1,13 @@
+:root {
+    --ig-primary-background: 0, 0, 0;
+    --ig-separator: 38, 38, 38;
+    --ig-hover-overlay: 255, 255, 255, .1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
