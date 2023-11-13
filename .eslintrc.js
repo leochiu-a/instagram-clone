@@ -3,7 +3,7 @@
  */
 module.exports = {
   plugins: ['simple-import-sort'],
-  extends: ['eslint:recommended', 'next/core-web-vitals', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:react-hooks/recommended', 'next/core-web-vitals', 'prettier'],
   rules: {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
