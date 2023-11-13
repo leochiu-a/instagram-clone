@@ -28,8 +28,20 @@
   transition: 0.3s;
   cursor: pointer;
 
+  svg {
+    transition: 0.1s;
+  }
+
   &:hover {
     background-color: rgb(var(--ig-hover-overlay));
+
+    svg {
+      transform: scale(1.05);
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
