@@ -4,6 +4,7 @@
   background-color: rgb(var(--ig-primary-background));
   width: 100%;
   border-top: 1px solid rgb(var(--ig-separator));
+  z-index: 2;
 
   @include breakpoint(medium) {
     width: var(--nav-narrow-width);
