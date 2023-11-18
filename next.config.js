@@ -36,6 +36,9 @@ const nextConfig = {
       },
     ],
   },
+  sassOptions: {
+    prependData: `@use "./src/styles/mixins" as *;`,
+  },
 };
 
 module.exports = nextConfig;

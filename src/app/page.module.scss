@@ -8,9 +8,16 @@
 /* page */
 
 .mainLayout {
-  width: calc(100% - var(--nav-medium-width));
-  margin-left: auto;
   padding-top: 40px;
+
+  @include breakpoint(medium) {
+    width: calc(100% - var(--nav-narrow-width));
+    margin-left: auto;
+  }
+
+  @include breakpoint(large) {
+    width: calc(100% - var(--nav-medium-width));
+  }
 }
 
 .mainLayout__content {
@@ -24,7 +31,12 @@
 }
 
 .mainLayout__feedSiderContainer {
-  padding-left: 64px;
+  display: none;
+
+  @include breakpoint(large) {
+    display: block;
+    padding-left: 64px;
+  }
 }
 
 .mainLayout__feedSider {
@@ -38,6 +50,7 @@
   display: flex;
   gap: 24px;
   margin-bottom: 44px;
+  overflow: hidden;
 }
 
 .stories__avatarImgContainer {
@@ -57,8 +70,11 @@
 /* posts */
 
 .posts {
-  width: 470px;
   margin: 0 auto;
+
+  @include breakpoint(small) {
+    width: 470px;
+  }
 }
 
 .post {

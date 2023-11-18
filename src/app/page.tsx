@@ -11,6 +11,7 @@ import ShareIcon from '@assets/icon-share-regular.svg';
 const HomePage: NextPage = () => {
   return (
     <div className={styles.mainLayout}>
+      <header></header>
       <section className={styles.mainLayout__content}>
         <div className={styles.mainLayout__contentInner}>
           {/* stories */}
@@ -50,7 +51,7 @@ const HomePage: NextPage = () => {
                   <Image
                     className={styles.post__image}
                     src="https://picsum.photos/640/640"
-                    width={640}
+                    width={470}
                     height={640}
                     alt="image"
                   />
