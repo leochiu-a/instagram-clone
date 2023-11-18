@@ -1,6 +1,6 @@
 'use client';
 
-import { NextPage } from 'next';
+import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 
 import styles from './Sider.module.scss';
@@ -21,7 +21,7 @@ import ReelsRegularIcon from '@assets/icon-reels-regular.svg';
 import SearchRegularIcon from '@assets/icon-search-regular.svg';
 import InstagramLogo from '@assets/instagram-logo.svg';
 
-const Sider: NextPage = () => {
+const Sider: FC = () => {
   const pathname = usePathname();
   console.log(pathname);
   return (
