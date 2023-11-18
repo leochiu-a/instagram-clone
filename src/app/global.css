@@ -1,4 +1,5 @@
 :root {
+    color-scheme: dark;
     --ig-primary-background: 0, 0, 0;
     --ig-separator: 38, 38, 38;
     --ig-hover-overlay: 255, 255, 255, .1;
