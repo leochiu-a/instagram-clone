@@ -8,7 +8,7 @@
       @content;
     }
   } @else if $point == large {
-    @media (min-width: 1160px) {
+    @media (min-width: 1264px) {
       @content;
     }
   }
