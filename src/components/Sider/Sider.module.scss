@@ -33,18 +33,22 @@
 }
 
 .logoLarge {
-  display: none;
+  opacity: 0;
+  transition: 0.3s;
+  position: absolute;
 
   @include breakpoint(large) {
-    display: inline;
+    opacity: 1;
   }
 }
 
 .logoMediumToSmall {
-  display: inline;
+  transform: scale(1);
+  transition: 0.3s;
+  position: absolute;
 
   @include breakpoint(large) {
-    display: none;
+    transform: scale(0);
   }
 }
 
