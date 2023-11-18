@@ -27,11 +27,13 @@ const Sider: NextPage = () => {
   return (
     <aside className={styles.aside}>
       <div className={styles.logo}>
-        <div className={styles.logoLarge}>
-          <InstagramLogo />
-        </div>
-        <div className={styles.logoMediumToSmall}>
-          <InstagramIcon />
+        <div className={styles.logoWrapper}>
+          <div className={styles.logoLarge}>
+            <InstagramLogo />
+          </div>
+          <div className={styles.logoMediumToSmall}>
+            <InstagramIcon />
+          </div>
         </div>
       </div>
 
