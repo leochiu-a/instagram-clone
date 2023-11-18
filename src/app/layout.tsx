@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import Sider from '@/components/Sider';
 
-import './global.scss';
+import '@/styles/global.scss';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
