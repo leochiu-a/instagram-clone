@@ -4,6 +4,7 @@
   background-color: rgb(var(--ig-primary-background));
   width: 100%;
   border-top: 1px solid rgb(var(--ig-separator));
+  z-index: 2;
 
   @include breakpoint(medium) {
     width: var(--nav-narrow-width);
@@ -32,19 +33,27 @@
   }
 }
 
+.logoWrapper {
+  position: relative;
+}
+
 .logoLarge {
-  display: none;
+  opacity: 0;
+  transition: 0.3s;
 
   @include breakpoint(large) {
-    display: inline;
+    opacity: 1;
   }
 }
 
 .logoMediumToSmall {
-  display: inline;
+  transform: scale(1);
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
 
   @include breakpoint(large) {
-    display: none;
+    transform: scale(0);
   }
 }
 
@@ -69,11 +78,7 @@
   transition: 0.3s;
   cursor: pointer;
   font-size: 17px;
-  margin-block: 8px;
-
-  @include breakpoint(large) {
-    margin: 4px;
-  }
+  margin-block: 4px;
 
   svg {
     transition: 0.1s;

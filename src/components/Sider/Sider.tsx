@@ -1,16 +1,16 @@
 'use client';
 
-import { NextPage } from 'next';
+import { FC } from 'react';
+import { usePathname } from 'next/navigation';
 
-// import { usePathname } from 'next/navigation';
 import styles from './Sider.module.scss';
 import BarsRegularIcon from '@assets/icon-bars-regular.svg';
 import ExploreRegularIcon from '@assets/icon-explore-regular.svg';
 // import ExploreSolidIcon from '@assets/icon-explore-solid.svg';
 import HomeRegularIcon from '@assets/icon-home-regular.svg';
+import HomeSolidIcon from '@assets/icon-home-solid.svg';
 // import SearchSolidIcon from '@assets/icon-search-solid.svg';
 import InstagramIcon from '@assets/icon-instagram-regular.svg';
-// import homeSolidIcon from '@assets/icon-home-solid.svg';
 // import InstagramRegularIcon from '@assets/icon-instagram-regular.svg';
 import MessengerRegularIcon from '@assets/icon-messenger-regular.svg';
 import NewPostRegularIcon from '@assets/icon-new-post-regular.svg';
@@ -21,23 +21,25 @@ import ReelsRegularIcon from '@assets/icon-reels-regular.svg';
 import SearchRegularIcon from '@assets/icon-search-regular.svg';
 import InstagramLogo from '@assets/instagram-logo.svg';
 
-const Sider: NextPage = () => {
-  // const pathname = usePathname();
-
+const Sider: FC = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <aside className={styles.aside}>
       <div className={styles.logo}>
-        <span className={styles.logoLarge}>
-          <InstagramLogo />
-        </span>
-        <span className={styles.logoMediumToSmall}>
-          <InstagramIcon />
-        </span>
+        <div className={styles.logoWrapper}>
+          <div className={styles.logoLarge}>
+            <InstagramLogo />
+          </div>
+          <div className={styles.logoMediumToSmall}>
+            <InstagramIcon />
+          </div>
+        </div>
       </div>
 
       <div className={styles.nav}>
         <div className={styles.navItem}>
-          <HomeRegularIcon />
+          {pathname === '/' ? <HomeSolidIcon /> : <HomeRegularIcon />}
           <span className={styles.navItemText}>首頁</span>
         </div>
         <div className={styles.navItemHideSmall}>

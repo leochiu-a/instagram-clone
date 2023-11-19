@@ -1,6 +1,9 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+import Carousel from '@/components/Carousel';
+import { CarouselItem } from '@/components/Carousel/Carousel';
+
 import styles from './page.module.scss';
 import BookmarkIcon from '@assets/icon-bookmark-regular.svg';
 import EllipsisIcon from '@assets/icon-ellipsis-regular.svg';
@@ -48,13 +51,19 @@ const HomePage: NextPage = () => {
 
                 {/* Image */}
                 <div>
-                  <Image
-                    className={styles.post__image}
-                    src="https://picsum.photos/640/640"
-                    width={470}
-                    height={640}
-                    alt="image"
-                  />
+                  <Carousel>
+                    {Array.from({ length: 3 }).map((_, index) => (
+                      <CarouselItem key={index}>
+                        <Image
+                          className={styles.post__image}
+                          src="https://picsum.photos/640/640"
+                          width={470}
+                          height={640}
+                          alt="image"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </Carousel>
                 </div>
 
                 {/* Operation */}
