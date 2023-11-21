@@ -47,10 +47,12 @@
 /* stories */
 
 .storiesList {
+  margin-bottom: 44px;
+}
+
+.storiesList__container {
   display: flex;
   gap: 24px;
-  margin-bottom: 44px;
-  overflow: hidden;
 }
 
 .stories__avatarImgContainer {
