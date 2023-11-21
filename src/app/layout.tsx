@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Sider from '@/components/Sider';
 
 import '@/styles/global.scss';
+import 'normalize.css';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {

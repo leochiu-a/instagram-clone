@@ -2,8 +2,15 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  plugins: ['simple-import-sort'],
-  extends: ['eslint:recommended', 'plugin:react-hooks/recommended', 'next/core-web-vitals', 'prettier'],
+  plugins: ['simple-import-sort', '@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'next/core-web-vitals',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
   rules: {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',

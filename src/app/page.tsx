@@ -1,8 +1,10 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+import { LeftArrow, RightArrow } from '@/components/Arrow';
 import Carousel from '@/components/Carousel';
 import { CarouselItem } from '@/components/Carousel/Carousel';
+import Scrollable from '@/components/Scrollable';
 
 import styles from './page.module.scss';
 import BookmarkIcon from '@assets/icon-bookmark-regular.svg';
@@ -19,15 +21,19 @@ const HomePage: NextPage = () => {
         <div className={styles.mainLayout__contentInner}>
           {/* stories */}
           <div className={styles.storiesList}>
-            {Array.from({ length: 8 }).map((_, index) => (
-              <div key={index}>
-                {/* avatar */}
-                <div className={styles.stories__avatarImgContainer}>
-                  <Image src="https://i.pravatar.cc/56" width={56} height={56} alt="avatar" />
-                </div>
-                <div className={styles.stories__userName}>name</div>
+            <Scrollable leftArrow={<LeftArrow />} rightArrow={<RightArrow />}>
+              <div className={styles.storiesList__container}>
+                {Array.from({ length: 16 }).map((_, index) => (
+                  <div key={index}>
+                    {/* avatar */}
+                    <div className={styles.stories__avatarImgContainer}>
+                      <Image src="https://i.pravatar.cc/56" width={56} height={56} alt="avatar" />
+                    </div>
+                    <div className={styles.stories__userName}>name</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </Scrollable>
           </div>
 
           {/* posts */}

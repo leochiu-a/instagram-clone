@@ -1,16 +1,24 @@
 'use client';
 
-import { Children, FC, PropsWithChildren, useCallback, useState } from 'react';
+import { Children, FC, ReactNode, useCallback, useState } from 'react';
+
+import { LeftArrow, RightArrow } from '@/components/Arrow';
 
 import styles from './Carousel.module.scss';
-import AngleLeftIcon from '@assets/icon-angle-left.svg';
-import AngleRightIcon from '@assets/icon-angle-right.svg';
 
-export const CarouselItem: FC<PropsWithChildren<{}>> = ({ children }) => {
+interface CarouselItemProps {
+  children: ReactNode;
+}
+
+export const CarouselItem: FC<CarouselItemProps> = ({ children }) => {
   return <div className={styles.carousel__item}>{children}</div>;
 };
 
-const Carousel: FC<PropsWithChildren<{}>> = ({ children }) => {
+interface CarouselProps {
+  children: ReactNode;
+}
+
+const Carousel: FC<CarouselProps> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const childrenCount = Children.count(children);
 
@@ -38,16 +46,16 @@ const Carousel: FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div className={styles.carousel}>
       {activeIndex !== 0 && (
-        <button className={styles.carousel__leftButton} onClick={prevSlide}>
-          <AngleLeftIcon />
+        <button onClick={prevSlide} className={styles.carousel__leftArrow}>
+          <LeftArrow />
         </button>
       )}
       <div className={styles.carousel__inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {children}
       </div>
       {activeIndex !== childrenCount - 1 && (
-        <button className={styles.carousel__rightButton} onClick={nextSlide}>
-          <AngleRightIcon />
+        <button onClick={nextSlide}  className={styles.carousel__rightArrow}>
+          <RightArrow />
         </button>
       )}
     </div>

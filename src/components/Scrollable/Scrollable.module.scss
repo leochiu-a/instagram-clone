@@ -1,0 +1,37 @@
+.scrollable {
+  overflow: hidden;
+  position: relative;
+
+  // for firefox
+  scrollbar-width: none;
+
+  // for chrome, safari, edge
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.container {
+  overflow: auto;
+}
+
+@mixin arrow {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 40px;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+}
+
+.leftArrow {
+  @include arrow;
+  left: 0;
+}
+
+.rightArrow {
+  @include arrow;
+  right: 0;
+}
