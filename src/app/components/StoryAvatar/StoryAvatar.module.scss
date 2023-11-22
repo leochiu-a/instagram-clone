@@ -1,0 +1,28 @@
+.storyAvatar {
+}
+
+.storyAvatar__avatarImgCircle {
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, rgba(245, 160, 77, 1) 0%, rgba(160, 15, 139, 1) 100%);
+}
+
+.storyAvatar__avatarImgCircleInner {
+  border-radius: 50%;
+  padding: 2px;
+  background-color: rgb(var(--ig-primary-background));
+}
+
+.storyAvatar__avatarImgContainer {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.storyAvatar__userName {
+  color: rgb(var(--ig-primary-text));
+  font-size: 13px;
+  text-align: center;
+  margin-top: 8px;
+}

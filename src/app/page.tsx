@@ -6,6 +6,8 @@ import Carousel from '@/components/Carousel';
 import { CarouselItem } from '@/components/Carousel/Carousel';
 import Scrollable from '@/components/Scrollable';
 
+import StoryAvatar from './components/StoryAvatar';
+
 import styles from './page.module.scss';
 import BookmarkIcon from '@assets/icon-bookmark-regular.svg';
 import EllipsisIcon from '@assets/icon-ellipsis-regular.svg';
@@ -24,13 +26,7 @@ const HomePage: NextPage = () => {
             <Scrollable leftArrow={<LeftArrow />} rightArrow={<RightArrow />}>
               <div className={styles.storiesList__container}>
                 {Array.from({ length: 16 }).map((_, index) => (
-                  <div key={index}>
-                    {/* avatar */}
-                    <div className={styles.stories__avatarImgContainer}>
-                      <Image src="https://i.pravatar.cc/56" width={56} height={56} alt="avatar" />
-                    </div>
-                    <div className={styles.stories__userName}>name</div>
-                  </div>
+                  <StoryAvatar key={index} />
                 ))}
               </div>
             </Scrollable>
